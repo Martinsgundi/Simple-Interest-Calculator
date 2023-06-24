@@ -268,14 +268,13 @@
                 <input type="text" id="principal" value="400" required />
         
                 <!-- CURRENCY SELECTOR -->
-                <label for="currency" class="currency" id="currency-label">Currency(optional)</label>
+                <label for="currency-select" class="currency" id="currency-label">Currency(optional)</label>
                 <select name="currency" class="currency" id="currency-select">
                     <option value=""></option>
                     <option value="₦">₦</option>
                     <option value="₹">₹</option>
                     <option value="$">$</option>
                     <option value="£">£</option>
-                    <option value="€">€</option>
                     <option value="₩">₩</option>
                     <option value="₣">₣</option>
                     <option value="R">R</option>
@@ -317,8 +316,8 @@
                 </br></br>
         
                 <!-- BUTTON CONTAINER -->
-                <div class="btn">
-                    <button id="btn" type="button" onclick="calculateSi()">
+                <div id="btn" class="btn" onclick="calculateSi()" >
+                    <button class="button" type="button" >
 
                     <!-- BUTTON IMAGE -->
                     <div class="img-div" >

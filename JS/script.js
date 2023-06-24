@@ -5,7 +5,7 @@ const calculateSi = ()=> {
     const period = Number(document.getElementById ('period').value);
     const displayResult = document.getElementById ('show-result');
 
-    const currency = document.getElementById ('currency').value;
+    const currency = document.getElementById ('currency-select').value;
 
     const percentRatePeriod = document.getElementById ('percent-period').value;
     const periodType = document.getElementById ('period-type').value;

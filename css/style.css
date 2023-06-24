@@ -330,10 +330,12 @@ select > option {
 .btn {
     text-align: end;
     margin-bottom: 30px;
+    margin-left: 354px;
+    width: fit-content;
 }
 
 .btn > button {
-    margin-right: 40px;
+    /* margin-right: 40px; */
     font-size: 22px;
     text-align: center;
     cursor: pointer;
@@ -352,7 +354,7 @@ select > option {
     color: rgb(255, 130, 4);
 }
 
-.btn > #btn, .img-div {
+.btn > .button, .img-div {
     display: inline-block;
     text-align: center;
 }
@@ -1007,7 +1009,6 @@ footer .logo > a > span {
 
 /* Major responsive breakpoints */
 
-
 @media (max-width:1040px) {
     
     article {
@@ -1094,7 +1095,7 @@ footer .logo > a > span {
         }
 
         .btn {
-            padding-bottom: 30px;
+            padding-bottom: 25px;
         }
     }
 
@@ -1106,7 +1107,6 @@ footer .logo > a > span {
 
         #currency-label {
             margin-top: 30px;
-
         }
 
         #currency-select {
@@ -1190,6 +1190,6 @@ footer .logo > a > span {
 
 
 /* This is for very small screens (Samsung flip and co). */
-@media (max-width:334px) {
+/* @media (max-width:334px) {
     
-}
+} */
