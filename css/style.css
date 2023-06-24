@@ -103,7 +103,7 @@ span > .dropdown-links {
     box-shadow: 0px 8px 16px 3px rgba(0, 0, 0, 0.2);
     z-index: 2;
     padding: 10px 20px;
-    text-underline-offset: 10px;
+    text-underline-offset: 8px;
 }
 
 span > .dropdown-links a {
@@ -664,11 +664,11 @@ footer .logo > a > span {
 
 
     .side-links {
-        border: 1px solid solid #081630;
+        border: 1px solid #081630;
         height: 100vh;
         max-width: 300px;
         position: fixed;
-        background-color: #081630;
+        background-color: #181733; 
         z-index: 3;
         display: none;
 
@@ -677,7 +677,7 @@ footer .logo > a > span {
     .side-links li {
         list-style: none;
         margin-bottom: 10px;
-        border-bottom: 1px solid solid #fff;
+        border-bottom: 1px solid #eeeeeee7;
         padding: 0 0 10px;
         margin-right: 20px;
         width: 240px;
@@ -685,8 +685,7 @@ footer .logo > a > span {
 
     .side-links a {
         text-decoration: none;
-        color: #fff;
-       
+        color: #eeeeeee7;
     }
 
     .first-h1 {
