@@ -707,7 +707,7 @@ footer .logo > a > span {
 
 
 /* Major responsive breakpoints */
-@media (max-width: 1160px) {
+@media (max-width: 1176px) {
     .container {
         width: 100%;
     }
