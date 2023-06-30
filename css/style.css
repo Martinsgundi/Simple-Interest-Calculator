@@ -31,8 +31,7 @@ header > .brand-name > a {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode',
     'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 600;
-    letter-spacing: 1px solid;
-    padding-left: 2rem;
+    letter-spacing: 1px;
 }
 
 header > .brand-name > a > span {
@@ -44,13 +43,18 @@ header > .brand-name > a > span {
 header ul {
     list-style: none;
     display: flex;
+    padding: 0;
 }
 
 header li {
-    margin-left: 30px;
+    margin-left: 20px;
     width: 160px;
     text-align: center;
     padding: 14px 14px;
+}
+
+#contact-link {
+    margin-right: 30px;
 }
 
 header a.n-links {
@@ -151,7 +155,7 @@ section {
 }
 
 section > article > h1, .first-h1 {
-    font-size: 2rem;
+    font-size: 1.9rem;
     font-family: Lora,Georgia,serif;
     font-weight: 600;
     color: #081630;
@@ -379,7 +383,7 @@ select > option {
 /* THIS IS THE STYLING FOR THE DISPLAYED RESULT */
 #show-result {
     /* border: 1px solid solid; */
-    width: 770px;
+    max-width: 770px;
     padding: 0px 0 20px;
 }   
 
@@ -451,10 +455,12 @@ select > option {
 .error {
     max-width: 600px;
     margin: 0 auto;
+    padding: 0 0 0 37px;
 }
 
 .error > h2 {
     font-size: 30px;
+    line-height: 41px;
 }
 
 .error > p, span {
@@ -527,7 +533,7 @@ footer .logo > a > span {
 
 .social-media i {
     font-size: 22px;
-    color: #000000;
+    color: #eeeeeee7;
     margin-right: 7px;
 }
 
@@ -648,6 +654,11 @@ footer .logo > a > span {
     font-size: 0.94rem;
 }
 
+.nav-side-links, .search-container, i.fa-bars,
+.nav-side-links, .fixed-sidebar, .block-side-bar {
+    display: none;
+}
+
 
 
 
@@ -656,22 +667,70 @@ footer .logo > a > span {
 
 /* RESPONSIVENESS */
 
-/* 1119px */
-@media (max-width: 1286px) {
+/* The calculator and result container displays block and are centered */
+@media (max-width: 1296px) {
+    
+    .main-container > .calc-container, .result-container {
+        display: block;
+    }
+
+    .main-container h1 {
+        margin-left: 0;
+    }
+
+    .calc-container {
+        max-width: 540px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+
+    form {
+        margin: 0;
+        padding-right: 0;
+    }
+
+    .result-container {
+        margin: 0 auto;
+        max-width: 770px;
+        padding-top: 30px;
+    }
+
+    #show-result {
+        width: 100%;
+    }
+
+    .result-header {
+        margin: 0 auto;
+        max-width: 340px;
+    }
+}
+
+
+/* Major responsive breakpoints */
+@media (max-width: 1160px) {
     .container {
         width: 100%;
     }
 
-
-    .side-links {
+    /* Side links opens/close on the click of menu icon */
+    .nav-side-links {
         border: 1px solid #081630;
         height: 100vh;
-        max-width: 300px;
+        width: 400px;
+        border-top: 1px solid #eeeeeee7;
         position: fixed;
         background-color: #181733; 
         z-index: 3;
-        display: none;
 
+    }
+
+    .nav-side-links a {
+        text-decoration: none;
+        color: #eeeeeee7;
+    }
+
+    .side-links ul, .social-title {
+        padding: 0 0 0 30px;
     }
 
     .side-links li {
@@ -679,25 +738,41 @@ footer .logo > a > span {
         margin-bottom: 10px;
         border-bottom: 1px solid #eeeeeee7;
         padding: 0 0 10px;
-        margin-right: 20px;
-        width: 240px;
+        margin-right: 30px;
     }
 
-    .side-links a {
-        text-decoration: none;
+    .side-links-socials {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 1.44rem 2rem 0;
+        margin-top: 3rem;
+    }
+
+    .social-title span {
         color: #eeeeeee7;
+        font-size: 14px;
     }
 
-    .first-h1 {
-        font-size: 3rem;
-        /* text-wrap: nowrap; */
-        width: 100%;
-        padding-left: 50px;
-        margin-top: 7rem;
+    .social-icons ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
     }
+
+    .social-icons li {
+        display: inline-block;
+        margin-left: 1rem;
+    }
+
+    .social-icons i {
+        font-size: 19px;
+    }
+    
 
     /* BLOCK mobile quick links shortcut */
     .block-side-bar {
+        display: block;
         border: 1px solid #ccd0d5;
         background: rgba(208, 228, 254, 0.233);
         border-radius: 4px;
@@ -705,7 +780,7 @@ footer .logo > a > span {
         padding: 1rem;
         max-width: 700px;
         box-shadow: 2px 2px 6px #ccd0d5;
-        margin: 15rem auto 15rem;
+        margin: 10rem auto 10rem;
     }
 
     .quick-links a {
@@ -727,30 +802,46 @@ footer .logo > a > span {
 
 
     /*  FIXED(top) mobile quick links shortcut  */
-    .fixed-sidebar {
-        border: 1px solid solid black;
-        color: #eee;
-        background-color: #000000;
-        justify-content: center;
+    /* .fixed-sidebar {
+        background: rgb(208, 228, 254);
         position: fixed;
         width: 100%;
-        height: 50px;
-        vertical-align: middle;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
         display: none;
     }
 
+    #fixedlinks {
+        border: none;
+        color: #081630;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        cursor: pointer;
+    }
 
+    .fixed-links {
+        border-top: 1px solid #0000004b;
+        padding-left: 30px;
+    }
 
+    .fixed-sidebar span {
+        font-weight: 700;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode',
+        'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    } */
 
+    /* i.fa-angle-down {
+        vertical-align: middle;
+        font-size: 15.5px;
+        margin-left: 10px;
+        color: #314259;
+        transform: rotate(180deg);
+    } */
 
 
     header {
         height: 60px;
         padding: 0;
-        justify-content: space-between;
+        /* justify-content: center; */
     }
 
     header > .brand-name a {
@@ -762,19 +853,85 @@ footer .logo > a > span {
         font-size: 27px;
     }
 
+    /* .search-container {
+        display: flex;
+        line-height: 60px;
+    }
+
+    .search-container span {
+        color: #eeeeeee7;
+        margin-inline-start: 12rem;
+        padding-right: 1rem;
+}
+    }
+
+    form.search-card {
+        padding-top: 0px;
+        border:none;
+        width: 0px;
+        border-radius: 0px;
+        box-shadow: none;
+        background-color:transparent;
+        color: transparent;
+        font-family: Lora,Georgia,serif;
+        margin-left: 0px;
+        padding-right: 0px;
+    }
+
+    .search-container input {
+        margin: 0;
+        width: 17rem;
+        border-radius: 0;
+        padding: 13.01px 10px;
+    }
+
+    .search-container input::placeholder {
+        font-size: 16.3px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode',
+        'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    } */
+
+    /* .search {
+        border: 1px solid #eee;
+        padding: 7px 15px 8px;
+        position: absolute;
+        cursor: pointer;
+        left: 54.8rem;
+    } */
+
+    /* .search i {
+        left: 17rem;
+        font-size: 15px;
+        border: 1px solid #eee;
+        padding: 13.55px 16px;
+        position: relative;
+    }
+
+    .close-icon i {
+        position: relative;
+        border: 1px solid yellow;
+        left: 11.5rem;
+
+    } */
+
+
+
+
+
     header i {
         cursor: pointer;
         font-size: 18px;
         color: #ccd0d5;
-
     }
 
     header i#open {
         padding-left: 32px;
+        display: block;
     }
 
     header i#search {
         padding-right: 32px;
+        display: block;
     }
 
     nav {
@@ -799,8 +956,13 @@ footer .logo > a > span {
         max-width: 65%;
         padding: 0 0 0 50px;
     }
-    .main-container {
-        /* border: 1px solid solid; */
+    
+    .first-h1 {
+        font-size: 3rem;
+        /* text-wrap: nowrap; */
+        width: 100%;
+        padding-left: 50px;
+        margin-top: 7rem;
     }
 
     .main-container > .calc-container, .result-container {
@@ -843,6 +1005,216 @@ footer .logo > a > span {
     }
 
 }
+
+@media (max-width:1040px) {
+    
+    article {
+        max-width: 73%;
+    }
+
+    section > article h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .first-h1 {
+        font-size: 2rem;
+    }
+
+    .fixed-links {
+        padding-left: 25px;
+    }
+
+    .nav-side-links {
+        width: 100vw;
+    }
+
+    .side-links ul, .social-title {
+        padding: 0 0 0 60px;
+    }
+
+    .side-links li {
+        margin-right: 60px;
+    }
+
+    .side-links-socials {
+        padding-right: 55px;
+    }
+
+    .social-icons li {
+        margin-left: 1.4rem;
+    }
+
+    article {
+        padding: 0 0 0 40px;
+    }
+
+    section > article h1, .main-container h1 {
+        font-size: 1.75rem;
+    }
+
+    .result-wrapper {
+        width: fit-content;
+        margin: 50px auto 0;
+    }
+
+    .left-result {
+        margin-left: 0;
+        max-width: 300px;
+    }
+
+    .right-result {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 640px) {
+
+    header > .brand-name > a {
+        font-size: 35px;
+    }
+
+    header > .brand-name > a > span {
+        font-size: 22px;
+    }
+
+    .side-links ul, .social-title {
+        padding: 0 0 0 20px;
+    }
+
+    .side-links li {
+        margin-right: 30px;
+    }
+
+    .side-links-socials {
+        padding-right: 25px;
+    }
+
+    .first-h1 {
+        padding-left: 30px;
+        margin-top: 4rem;
+    }
+
+    .fixed-links {
+        padding-left: 20px;
+    }
+
+    article {
+        max-width: 100%;
+        padding: 0 35px;
+        margin: 0;
+    }
+
+    .left-result, .right-result {
+        max-width: 250px;
+    } 
+
+    .error {
+        padding: 0 25px;
+    }
+}
+
+/* This is specifically for the calculator-form */
+@media (max-width: 580px) {
+    
+    form {
+        border: none;
+        border-radius: 0;
+        /* background-color: transparent; */
+        box-shadow: none;
+    }
+
+    .btn {
+        padding-bottom: 25px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .currency {
+        display: block;
+    }
+
+    #currency-label {
+        margin-top: 30px;
+    }
+
+    #currency-select {
+        display: inline-block;
+        margin: 10px 0 0 32px;
+    }
+
+    .btn {
+        text-align: left;
+        margin-left: 30px;
+    }
+}
+    
+/* This is specifically for the calc-result */
+@media (max-width: 560px) {
+
+    .result-wrapper {
+        width: auto;
+        margin: 50px 20px 0;
+    }
+
+    .result-wrapper > div {
+        display: block;
+        max-width: 100%;
+    }
+
+    .result-header {
+        margin: 0 20px;
+    }
+
+    .right-result {
+        margin-top: 30px;
+    }
+
+}
+
+@media (max-width:475px) {
+    
+    article {
+        padding: 0 25px;
+    }
+    
+    .fixed-links {
+        padding-left: 10px;
+    }
+    
+    header i#open {
+        padding-left: 20px;
+    }
+
+    header i#search {
+        padding-right: 20px;
+    }
+
+    .side-links-socials {
+        display: block;
+        margin: 3rem auto 0;
+        padding: 2rem 0;
+        width: fit-content;
+    }
+
+    .social-title {
+        text-align: center;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+    
+    .first-h1 {
+        margin-top: 3rem;
+    }
+
+    .main-container h1 {
+        padding: 0 12px;
+    }
+}
+
 
 
 /* Footer responsive design */
@@ -1004,191 +1376,3 @@ footer .logo > a > span {
     }
     
 }
-
-
-/* Major responsive breakpoints */
-
-@media (max-width:1040px) {
-    
-    article {
-        max-width: 73%;
-    }
-
-    section > article h1 {
-        font-size: 1.8rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .first-h1 {
-        font-size: 2rem;
-    }
-
-    article {
-        padding: 0 0 0 40px;
-    }
-
-    section > article h1, .main-container h1 {
-        font-size: 1.75rem;
-    }
-
-    .block-side-bar {
-        margin: 10rem auto 10rem;
-    }
-
-    /* form {
-        max-width: 500px;
-    } */
-
-    .result-wrapper {
-        width: fit-content;
-        margin: 50px auto 0;
-    }
-
-    .left-result {
-        margin-left: 0;
-        max-width: 300px;
-    }
-
-    .right-result {
-        max-width: 300px;
-    }
-
-}
-
-
-@media (max-width: 640px) {
-    header > .brand-name > a {
-        font-size: 35px;
-    }
-
-    header > .brand-name > a > span {
-        font-size: 22px;
-    }
-
-    .first-h1 {
-        padding-left: 30px;
-        margin-top: 4rem;
-    }
-
-    article {
-        max-width: 100%;
-        padding: 0 35px;
-        margin: 0;
-    }
-
-    .left-result, .right-result {
-        max-width: 250px;
-    } 
-
-}
-
-/* This is specifically for the calculator-form */
-    @media (max-width: 580px) {
-        
-        form {
-            border: none;
-            border-radius: 0;
-            /* background-color: transparent; */
-            box-shadow: none;
-        }
-
-        .btn {
-            padding-bottom: 25px;
-        }
-    }
-
-    @media (max-width: 550px) {
-
-        .currency {
-            display: block;
-        }
-
-        #currency-label {
-            margin-top: 30px;
-        }
-
-        #currency-select {
-            display: inline-block;
-            margin: 10px 0 0 32px;
-        }
-
-        .btn {
-            text-align: left;
-            margin-left: 30px;
-        }
-    }
-    
-
-/* This is specifically for the calc-result */
-@media (max-width: 560px) {
-
-    .result-wrapper {
-        max-width: 100%;
-        margin: 50px 0 0 35px;
-    }
-
-    .result-wrapper > div {
-        display: block;
-    }
-
-    .result-header {
-        margin-left: 35px;
-    }
-
-    .left-result, .right-result {
-       max-width: 100%;
-        margin: 0;
-    }
-
-    .right-result {
-        margin-top: 30px;
-    }
-
-
-}
-
-/*@media (max-width: 500px) {
-
-    .result-wrapper {
-        width: fit-content;
-        margin: 50px 10px 0;
-    }
-
-
-    .left-result, .right-result {
-        max-width: 200px;
-    }
-
-    .left-result {
-
-        margin-right: 70px;
-    }
-} */
-
-/* Extra small screen */
-@media (max-width:475px) {
-    
-    article {
-        padding: 0 25px;
-    }
-    
-    header i#open {
-        padding-left: 20px;
-    }
-
-    header i#search {
-        padding-right: 20px;
-    }
-    
-    .first-h1 {
-        margin-top: 3rem;
-    }
-}
-
-
-
-/* This is for very small screens (Samsung flip and co). */
-/* @media (max-width:334px) {
-    
-} */

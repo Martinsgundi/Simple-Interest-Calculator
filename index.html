@@ -20,7 +20,24 @@
         </span>
     
         
-        <!-- search icon -->
+        <!-- This is the nav search box -->
+        <!-- <div class="search-container">
+
+            <span>Search</span>
+
+            <form class="search-card">
+                <input type="text" class="search-box" placeholder="What are you looking for?">
+            </form>
+
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <span class="close-icon"> <i class="fa-solid fa-x"></i> </span>
+
+        </div> -->
+
+        <!-- search icon opens the search box -->
         <i id="search" class="fa-solid fa-magnifying-glass"></i>
 
         <nav class="nav-links">
@@ -44,38 +61,84 @@
                     </span>  
                 </li>
 
-                <li> <a class="n-links" href="#">Contact us</a></li>
+                <li id="contact-link"> <a class="n-links" href="#">Contact us</a></li>
             </ul>
         </nav>
     </header>
+
    
     <!-- nav-side-links -->
-    <div id="side-links" class="side-links">
-        <ul>
-            <li> <a href="#">Finance</a> </li>
-            <li> <a href="#">Business</a> </li>
-            <li> <a href="#">Investing</a> </li>
-            <li> <a href="https://getbmi.netlify.app/" target="_blank">BMI Calculator</a> </li>
-            <li> <a href="https://gundi-facebook.netlify.app/" target="_blank">Banking</a> </li>
-            <li> <a href="https://google-dummy.netlify.app/" target="_blank">Economics</a> </li>
-            <li> <a href="#">Entrepreneurship</a> </li>
-            <li> <a href="#">Business Tools</a> </li>
-            <li> <a href="#">Cryptocurrency</a> </li>
-            <li> <a href="#">Contact us</a> </li>
-        </ul>
-    </div>
+    <div class="nav-side-links" id="nav-side-links">
 
+       <div class="side-links">
+            <ul>
+                <li> <a href="#">Finance</a> </li>
+                <li> <a href="#">Business</a> </li>
+                <li> <a href="https://google-dummy.netlify.app/" target="_blank">Investing</a> </li>
+                <li> <a href="https://getbmi.netlify.app/" target="_blank">BMI Calculator</a> </li>
+                <li> <a href="https://gundi-facebook.netlify.app/" target="_blank">Banking</a> </li>
+                <li> <a href="#">More</a> </li>
+                <li> <a href="#">Contact us</a> </li>
+            </ul>
+        </div>
+
+        <div class="side-links-socials">
+
+            <div class="social-title">
+                <span>Follow Us</span>
+            </div>
+
+            <div class="social-icons">
+                <ul>
+                    <li> <a href="#"> <i class="fa-brands fa-facebook-f" title="Follow us on Facebook"></i> </a> </li>
+
+                    <li> <a href="https://www.instagram.com/martinsgundi/" target="_blank">
+                        <i class="fa-brands fa-instagram" title="Follow us on Instagram"></i> </a> 
+                    </li>
+
+                    <li>  <a href="https://twitter.com/martinsgundi1" target="_blank">
+                        <i class="fa-brands fa-twitter" title="Follow us on Twitter"></i> </a>
+                    </li>
+
+                    <li> <a href="#"> <i class="fa-solid fa-envelope" title="Reach out to us via Email"></i> </a> </li>
+
+                    <li> <a href="https://www.linkedin.com/in/martins-ogundipe-759924270?trk=contact-info" target="_blank">
+                        <i class="fa-brands fa-linkedin" title="Let's connect on Linkedin"></i> </a> 
+                    </li>
+
+                    <li> <a href="https://github.com/Martinsgundi" target="_blank">
+                        <i class="fa-brands fa-github" title="Check out my Github profile"></i> </a> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+ 
+    </div>
+    
 
 
     <!-- FIXED(top) mobile quick links shortcut -->
-    <div class="fixed-sidebar" id="fixedlinks"> 
-        <span> In this content</span>
+    <div class="fixed-sidebar content">
+
+       <div id="fixedlinks"> 
+            <span> In This Content</span>
+            <i class="fa-solid fa-angle-down"></i>
+        </div>
+
+        <!-- FIXED quick links dropdown -->
+        <div class="fixed-links quick-links">
+                    
+            <a href="#go-to-whats-a-si-calc">What is a Simple Interest Calculator?</a>
+
+            <a href="#go-to-example-of-simple-i">Example of Simple Interest</a> 
+            
+            <a href="#go-to-benefits-of-gundi-calc">Benefits of Gundi.net Simple Interest Calculator</a>
+
+            <a href="#go-to-calculate-simple-i">Calculate your Simple Interest</a>
+
+        </div>
+ 
     </div>
-
-
-
-
-    <!--  BLOCK mobile quick links shortcut -->
     
     
 
@@ -109,6 +172,7 @@
 
             <article>
 
+                <!-- Mobile -->
                 <div class="block-side-bar" >
                     <div id="blocklinks">
                         <div class="side-bar-header">
@@ -135,7 +199,7 @@
                     In other words, simple interest only applies to the principal amount.
                 </p> 
 
-                <p>
+                <p id="go-to-whats-a-si-calc">
                     If a borrower takes money from a lender, an extra amount of money is paid back to the lender.
                     The borrowed money which is given for a specific period is called the <b>principal</b>.
                     The extra amount which is paid back to the lender for using the money is called the <b>interest</b>.

@@ -176,7 +176,7 @@ const calculateSi = ()=> {
 
 // This makes the side bar show and disappear when the button is clicked on mobile.
 const openSideBar = () => {
-    const openOnClick = document.getElementById ("side-links")
+    const openOnClick = document.getElementById ("nav-side-links")
     const changeColor = document.getElementsByClassName ("content")
     const body = document.body
 
@@ -191,8 +191,9 @@ const openSideBar = () => {
             changeColor[i].style.opacity = ".60";  
         };
         
-        // This makes the body unscrollable
+        // This makes the viewport unscrollable
         body.style.overflow = "hidden"
+        openOnClick.style.overflow = "hidden"
 
     }
 
@@ -204,12 +205,24 @@ const openSideBar = () => {
             changeColor[i].style.opacity = "1";  
         };
 
-        // This makes the body scrollable
+        // This makes the viewport scrollable
         body.style.overflow = "auto"
+        openOnClick.style.overflow = "auto"
     }
 } 
 
 
+
+
+// function scrollFunction() {
+//     if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+//         document.getElementById ("fixedlinks").style.display = "block"
+//     } else {
+//         document.getElementById ("fixedlinks").style.display = "none"
+//     }
+// }
+
+// window.onscroll = function() {scrollFunction()};
 
 // const blockSidebarLinks = document.getElementById ("blocklinks")
 // const fixedSidebarLinks = document.getElementById ("fixedlinks")
