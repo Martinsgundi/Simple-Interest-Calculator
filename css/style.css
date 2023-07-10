@@ -934,6 +934,7 @@ footer .logo > a > span {
         margin-top: 15px;
         width: fit-content;
         text-underline-offset: 5px;
+        padding: 0;
     }
 
     .quick-links a:hover {
@@ -965,7 +966,7 @@ footer .logo > a > span {
 
     #fixed-links {
         border-top: 1px solid #0000004b;
-        padding-left: 30px;
+        padding-left: 50px;
         visibility: visible;
     }
 
@@ -1068,12 +1069,17 @@ footer .logo > a > span {
         font-size: 2rem;
     }
 
+
     .fixed-links {
         padding-left: 25px;
     }
 
     .fixed-links > a {
         font-size: 1rem;
+    }
+
+    #fixed-links {
+        padding-left: 40px;
     }
 
     .nav-side-links {
@@ -1256,7 +1262,7 @@ footer .logo > a > span {
         width: 12rem;
     }
 
-    article {
+    article, #fixed-links {
         padding: 0 25px;
     }
     
