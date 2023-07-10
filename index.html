@@ -14,6 +14,7 @@
 
         <!-- This opens/close the nav-side-links on large screens to mobile screens -->
         <i id="open" onclick="openSideBar()" class="fa-solid fa-bars"></i>
+        <i id="close" onclick="closeTheSideBar()" class="fa-solid fa-x"></i>
 
         <span class="brand-name">
          <a href="#">Gundi<span>.net</span></a>
@@ -21,24 +22,30 @@
     
         
         <!-- This is the nav search box -->
-        <!-- <div class="search-container">
+        <div class="search-container">
 
-            <span>Search</span>
+            <div class="search-content">
+                
+                <span class="search-span">Search</span>
 
-            <form class="search-card">
+               
+                <form class="search-card">
                 <input type="text" class="search-box" placeholder="What are you looking for?">
-            </form>
+                </form>
+                
 
-            <div class="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
+            
+                <span> <i class="fa-solid fa-magnifying-glass search"></i> </span>
             </div>
+    
+        </div>
 
-            <span class="close-icon"> <i class="fa-solid fa-x"></i> </span>
-
-        </div> -->
+        <!-- x icon closes the search box -->
+        <span class="search-box"> <i id="close-search-box" class="fa-solid fa-x"></i> </span>
 
         <!-- search icon opens the search box -->
-        <i id="search" class="fa-solid fa-magnifying-glass"></i>
+        <span class="search-box"> <i id="open-search-box" class="fa-solid fa-magnifying-glass"> </i></span>
+
 
         <nav class="nav-links">
             <ul>
@@ -55,6 +62,7 @@
                             <a href="https://gundi-facebook.netlify.app/" target="_blank">Banking</a>
                             <a href="https://google-dummy.netlify.app/" target="_blank">Economics</a>
                             <a href="#">Entrepreneurship</a>
+                            <a href="#">Budgeting</a>
                             <a href="#">Business Tools</a>
                             <a href="#">Cryptocurrency</a>
                         </div>
@@ -67,17 +75,17 @@
     </header>
 
    
-    <!-- nav-side-links -->
-    <div class="nav-side-links" id="nav-side-links">
+    <!-- NavSideBar Primary links -->
+    <div class="nav-side-links">
 
        <div class="side-links">
-            <ul>
+            <ul id="side-link-list">
                 <li> <a href="#">Finance</a> </li>
                 <li> <a href="#">Business</a> </li>
                 <li> <a href="https://google-dummy.netlify.app/" target="_blank">Investing</a> </li>
                 <li> <a href="https://getbmi.netlify.app/" target="_blank">BMI Calculator</a> </li>
                 <li> <a href="https://gundi-facebook.netlify.app/" target="_blank">Banking</a> </li>
-                <li> <a href="#">More</a> </li>
+                <li> <a href="#" id="more">More</a> </li>
                 <li> <a href="#">Contact us</a> </li>
             </ul>
         </div>
@@ -112,7 +120,22 @@
                 </ul>
             </div>
         </div>
- 
+
+        <!-- NavSideBar Secondary links -->
+        <div class="more-links">
+
+            <div class="more-links-header">
+            <span> <i id="close-more-links" class="fa-solid fa-arrow-left"></i> </span> <span> More </span>
+            </div>
+    
+            <ul>
+                <li> <a href="https://google-dummy.netlify.app/" target="_blank">Economics</a> </li>
+                <li> <a href="#">Entrepreneurship</a> </li>
+                <li> <a href="#">Budgeting</a> </li>
+                <li> <a href="#">Business Tools</a> </li>
+                <li> <a href="#">Cryptocurrency</a> </li>
+            </ul>
+        </div>
     </div>
     
 
@@ -120,35 +143,37 @@
     <!-- FIXED(top) mobile quick links shortcut -->
     <div class="fixed-sidebar content">
 
-       <div id="fixedlinks"> 
-            <span> In This Content</span>
+       <div id="link-holder"> 
+            <span> In This Article </span>
             <i class="fa-solid fa-angle-down"></i>
         </div>
 
         <!-- FIXED quick links dropdown -->
-        <div class="fixed-links quick-links">
+        <div id="fixed-links" class="quick-links">
                     
-            <a href="#go-to-whats-a-si-calc">What is a Simple Interest Calculator?</a>
+            <a class="fast-links" onclick="removeLinks()" href="#go-to-whats-a-si-calc">
+            What is a Simple Interest Calculator?</a>
 
-            <a href="#go-to-example-of-simple-i">Example of Simple Interest</a> 
+            <a class="fast-links" onclick="removeLinks()" href="#go-to-example-of-simple-i">
+            Example of Simple Interest</a> 
             
-            <a href="#go-to-benefits-of-gundi-calc">Benefits of Gundi.net Simple Interest Calculator</a>
+            <a class="fast-links" onclick="removeLinks()" href="#go-to-benefits-of-gundi-calc">
+            Benefits of Gundi.net Simple Interest Calculator</a>
 
-            <a href="#go-to-calculate-simple-i">Calculate your Simple Interest</a>
+            <a class="fast-links" onclick="removeLinks()" href="#go-to-calculate-simple-i">
+            Calculate your Simple Interest</a>
 
         </div>
- 
     </div>
     
     
-
 
     <div class="container content-container content">
 
         <aside>
             <div class="side-bar">
                 <div class="side-bar-header">
-                    Content
+                    In This Article
                 </div>
     
                 <div class="sticky-links quick-links">
@@ -172,11 +197,11 @@
 
             <article>
 
-                <!-- Mobile -->
+                <!-- Mobile block side bar -->
                 <div class="block-side-bar" >
                     <div id="blocklinks">
                         <div class="side-bar-header">
-                            Content
+                            In This Article
                         </div>
 
                         <div  class="block-side-links quick-links">
@@ -380,9 +405,9 @@
                 </br></br>
         
                 <!-- BUTTON CONTAINER -->
-                <div id="btn" class="btn" onclick="calculateSi()" >
+                <div id="btn" class="btn"  >                  
                     <button class="button" type="button" >
-
+                    <!-- onclick="calculateSi()" -->
                     <!-- BUTTON IMAGE -->
                     <div class="img-div" >
                     <img class="btn-img" src="Images/calc-icon2.png" >

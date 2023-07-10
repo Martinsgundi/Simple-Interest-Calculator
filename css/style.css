@@ -17,11 +17,14 @@ header {
     height: 110px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
+    padding: 0 20px;
     position: sticky;
     top: 0%;
     z-index: 1;
+}
+
+header > .brand-name {
+    padding-left: 2.5rem;
 }
 
 header > .brand-name > a {
@@ -32,6 +35,7 @@ header > .brand-name > a {
     'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 600;
     letter-spacing: 1px;
+    display: block;
 }
 
 header > .brand-name > a > span {
@@ -47,14 +51,14 @@ header ul {
 }
 
 header li {
-    margin-left: 20px;
+    margin-left: 10px;
     width: 160px;
     text-align: center;
     padding: 14px 14px;
 }
 
-#contact-link {
-    margin-right: 30px;
+.nav-links {
+    margin: 0 auto;
 }
 
 header a.n-links {
@@ -118,7 +122,6 @@ span > .dropdown-links a {
     font-family: Nunito,Arial,sans-serif;
     letter-spacing: 2px;
     display: block;
-    /* text-align: left; */
     margin: 30px 0;
     position: relative;
     width: fit-content;
@@ -137,18 +140,13 @@ span > .dropdown-links a:hover {
 
 
 
-
-
 /* THIS CONTAINS BOTH THE SECTION AND ASIDE(SIDE-BAR) CONTENT */
 .content-container  {
     display: flex;
     justify-content: space-between;
-    /* border: 1px solid solid greenyellow; */
 }
 
 section {
-    /* border: 1px solid; */
-    /* padding: 0px 180px 0px 20px; */
     width: 100%;
     margin: 80px 0 0 50px;
     padding: 0 16rem 0 10rem;
@@ -200,16 +198,14 @@ article {
 }
 
 
-/* THIS IS THE SIDE-BAR */
+/* THIS IS THE STICKY SIDE-BAR */
 .content-container > aside {
-    /* border: 1px solid solid blue; */
     width: 230px;
     margin-top: 22rem;
     margin-left: 70px;
 }
 
 aside > .side-bar {
-    /* border: 1px solid solid; */
     position: sticky;
     position: -webkit-sticky;
     top: 10rem;
@@ -228,8 +224,7 @@ aside > .side-bar > .side-bar-header {
 
 aside > .side-bar > .quick-links {
     border-left: 3px solid rgb(255, 130, 4);
-    margin-left: 10px;
-    
+    margin-left: 10px;   
 }
 
 .quick-links > a {
@@ -251,7 +246,6 @@ aside > .side-bar > .quick-links {
 
 /* THIS CONTAINS THE CALCULATOR AND IT RESULTS */
 .main-container {
-    /* border: 1px solid solid; */
     padding-top: 130px;
     margin-bottom: 20rem;
 }
@@ -269,8 +263,6 @@ aside > .side-bar > .quick-links {
 
 .result-container {
     vertical-align: baseline;
-    /* border: 1px solid solid; */
-    /* padding-top: 80px; */
 }
 
 form {
@@ -294,7 +286,6 @@ label {
     font-size: 19px;
     font-weight: 800;
     color: #081630;
-    
 }
 
 input {
@@ -339,7 +330,6 @@ select > option {
 }
 
 .btn > button {
-    /* margin-right: 40px; */
     font-size: 22px;
     text-align: center;
     cursor: pointer;
@@ -382,7 +372,6 @@ select > option {
 
 /* THIS IS THE STYLING FOR THE DISPLAYED RESULT */
 #show-result {
-    /* border: 1px solid solid; */
     max-width: 770px;
     padding: 0px 0 20px;
 }   
@@ -477,7 +466,6 @@ select > option {
 
 
 /* FOOTER */
-
 footer {
     background-color: #181733;
     color: #ffffff;
@@ -518,7 +506,6 @@ footer .logo > a > span {
 }
 
 .social-media > span {
-    /* border: 1px solid lime; */
     max-width: 300px;
     margin: 30px 0 10px 64px ;
     font-size: 14px;
@@ -526,7 +513,6 @@ footer .logo > a > span {
 }
 
 .social-media > ul {
-    /* border: 1px solid pink; */
     width: 330px;
     margin-left: 18px;
 }
@@ -577,7 +563,6 @@ footer .logo > a > span {
 
 .footer-links > div {
     display: inline-block;
-    /* border: 1px solid red; */
 }
 
 .footer-links ul {
@@ -654,18 +639,20 @@ footer .logo > a > span {
     font-size: 0.94rem;
 }
 
-.nav-side-links, .search-container, i.fa-bars,
-.nav-side-links, .fixed-sidebar, .block-side-bar {
+.nav-side-links, .search-container,
+.block-side-bar {
+    display: none;
+}
+
+#link-holder, #fixed-links {
+    visibility: hidden;
     display: none;
 }
 
 
 
 
-
-
-
-/* RESPONSIVENESS */
+/* RESPONSIVE Design */
 
 /* The calculator and result container displays block and are centered */
 @media (max-width: 1296px) {
@@ -707,21 +694,142 @@ footer .logo > a > span {
 
 
 /* Major responsive breakpoints */
-@media (max-width: 1176px) {
+@media (max-width: 1150px) {
     .container {
         width: 100%;
     }
 
+    header {
+        height: 60px;
+        padding: 0;
+    }
+
+    header > .brand-name {
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    header > .brand-name a {
+        padding: 0 10px;
+        font-size: 40px;
+    }
+    
+    header > .brand-name span {
+        font-size: 27px;
+    }
+
+    header i {
+        cursor: pointer;
+        font-size: 18px;
+        color: #ccd0d5;
+    }
+
+    header i#open {
+        padding-left: 32px;
+        display: block;
+    }
+
+    header i#close {
+        padding-left: 32px;
+        display: none;
+    }
+
+    header i#close-search-box {
+        position: absolute;
+        line-height: 0;
+        right: 35px;
+        display: none;
+    }
+
+    header i#open-search-box {
+        padding-right: 32px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    /* Nav search box */
+    .search-container {
+        display: flex;
+        line-height: 60px;
+        width: inherit;
+        height: inherit;
+        display: none;
+    }
+
+    .search-content {
+        width: 24rem;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .search-span {
+        color: #eeeeeee7;
+        padding-right: 1rem;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode',
+        'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 1.2rem;
+        letter-spacing: 0.04rem;
+    }
+
+    form.search-card {
+        padding-top: 0px;
+        border: none;
+        width: 17rem;
+        border-radius: 0px;
+        box-shadow: none;
+        background-color:transparent;
+        color: transparent;
+        font-family: Lora,Georgia,serif;
+        margin-left: 0px;
+        padding-right: 0px;
+        display: flex;
+        align-items: center;
+    }
+
+    .search-container input {
+        margin: 0;
+        border-radius: 0;
+        padding: 13.01px 10px;
+        font-size: 17px;
+        width: inherit;
+    }
+
+    .search-container input::placeholder {
+        font-size: 17px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode',
+        'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    } 
+
+    i.search {
+        left: 0;
+        color: #fff;
+        font-size: 15px;
+        border: 1px solid #ff8204;
+        padding: 0 16px 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-top: 6px;
+        height: 48px;
+        background: #ff8204;
+    }
+
+    i.search:hover {
+        background: #e0760b;
+        border: 1px solid #e0760b;
+    }
+
+
     /* Side links opens/close on the click of menu icon */
     .nav-side-links {
-        border: 1px solid #081630;
         height: 100vh;
         width: 400px;
         border-top: 1px solid #eeeeeee7;
         position: fixed;
         background-color: #181733; 
         z-index: 3;
-
     }
 
     .nav-side-links a {
@@ -768,6 +876,44 @@ footer .logo > a > span {
     .social-icons i {
         font-size: 19px;
     }
+
+    .more-links {
+        display: none;
+    }
+
+    .more-links-header {
+       margin: 2rem 0;
+    }
+
+    .more-links span {
+        font-family: Lora,Georgia,serif;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: #eeeeeee7;
+    }
+
+    .more-links i {
+        margin: 0 1rem 0 0;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .more-links ul, .more-links-header {
+        padding: 0 0 0 30px;
+    }
+
+    .more-links li {
+        list-style: none;
+        margin-bottom: 1.5rem;
+    }
+
+    .more-links a {
+        text-decoration: none;
+        color: #eeeeeee7;
+        font-size: 1.05rem;
+    }
     
 
     /* BLOCK mobile quick links shortcut */
@@ -802,140 +948,42 @@ footer .logo > a > span {
 
 
     /*  FIXED(top) mobile quick links shortcut  */
-    /* .fixed-sidebar {
-        background: rgb(208, 228, 254);
+    .fixed-sidebar {
+        background: #eee;
         position: fixed;
         width: 100%;
-        display: none;
     }
 
-    #fixedlinks {
+    #link-holder {
         border: none;
-        color: #081630;
         text-align: center;
         height: 50px;
         line-height: 50px;
         cursor: pointer;
+        visibility: visible;
     }
 
-    .fixed-links {
+    #fixed-links {
         border-top: 1px solid #0000004b;
         padding-left: 30px;
+        visibility: visible;
+    }
+
+    #fixed-links > a {
+        font-size: 1.1rem;
     }
 
     .fixed-sidebar span {
         font-weight: 700;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode',
         'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    } */
+    }
 
-    /* i.fa-angle-down {
+    i.fa-angle-down {
         vertical-align: middle;
         font-size: 15.5px;
         margin-left: 10px;
         color: #314259;
-        transform: rotate(180deg);
-    } */
-
-
-    header {
-        height: 60px;
-        padding: 0;
-        /* justify-content: center; */
-    }
-
-    header > .brand-name a {
-        padding: 0 10px;
-        font-size: 40px;
-    }
-    
-    header > .brand-name span {
-        font-size: 27px;
-    }
-
-    /* .search-container {
-        display: flex;
-        line-height: 60px;
-    }
-
-    .search-container span {
-        color: #eeeeeee7;
-        margin-inline-start: 12rem;
-        padding-right: 1rem;
-}
-    }
-
-    form.search-card {
-        padding-top: 0px;
-        border:none;
-        width: 0px;
-        border-radius: 0px;
-        box-shadow: none;
-        background-color:transparent;
-        color: transparent;
-        font-family: Lora,Georgia,serif;
-        margin-left: 0px;
-        padding-right: 0px;
-    }
-
-    .search-container input {
-        margin: 0;
-        width: 17rem;
-        border-radius: 0;
-        padding: 13.01px 10px;
-    }
-
-    .search-container input::placeholder {
-        font-size: 16.3px;
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode',
-        'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    } */
-
-    /* .search {
-        border: 1px solid #eee;
-        padding: 7px 15px 8px;
-        position: absolute;
-        cursor: pointer;
-        left: 54.8rem;
-    } */
-
-    /* .search i {
-        left: 17rem;
-        font-size: 15px;
-        border: 1px solid #eee;
-        padding: 13.55px 16px;
-        position: relative;
-    }
-
-    .close-icon i {
-        position: relative;
-        border: 1px solid yellow;
-        left: 11.5rem;
-
-    } */
-
-
-
-
-
-    header i {
-        cursor: pointer;
-        font-size: 18px;
-        color: #ccd0d5;
-    }
-
-    header i#open {
-        padding-left: 32px;
-        display: block;
-    }
-
-    header i#search {
-        padding-right: 32px;
-        display: block;
-    }
-
-    nav {
-        display: none;
     }
 
     aside {
@@ -959,7 +1007,6 @@ footer .logo > a > span {
     
     .first-h1 {
         font-size: 3rem;
-        /* text-wrap: nowrap; */
         width: 100%;
         padding-left: 50px;
         margin-top: 7rem;
@@ -974,7 +1021,6 @@ footer .logo > a > span {
     }
 
     .calc-container {
-        /* border: 1px solid solid; */
         max-width: 540px;
         margin: 0 auto;
         margin-bottom: 50px;
@@ -1003,10 +1049,9 @@ footer .logo > a > span {
     .footer-primary {
         margin-right: 0;
     }
-
 }
 
-@media (max-width:1040px) {
+@media (max-width: 1040px) {
     
     article {
         max-width: 73%;
@@ -1027,6 +1072,10 @@ footer .logo > a > span {
         padding-left: 25px;
     }
 
+    .fixed-links > a {
+        font-size: 1rem;
+    }
+
     .nav-side-links {
         width: 100vw;
     }
@@ -1045,6 +1094,10 @@ footer .logo > a > span {
 
     .social-icons li {
         margin-left: 1.4rem;
+    }
+
+    .more-links ul, .more-links-header {
+        padding: 0 0 0 80px;
     }
 
     article {
@@ -1092,6 +1145,10 @@ footer .logo > a > span {
         padding-right: 25px;
     }
 
+    .more-links ul, .more-links-header {
+        padding: 0 0 0 20px;
+    }
+
     .first-h1 {
         padding-left: 30px;
         margin-top: 4rem;
@@ -1122,7 +1179,6 @@ footer .logo > a > span {
     form {
         border: none;
         border-radius: 0;
-        /* background-color: transparent; */
         box-shadow: none;
     }
 
@@ -1150,6 +1206,26 @@ footer .logo > a > span {
         text-align: left;
         margin-left: 30px;
     }
+
+    /* Nav menu icons */
+    .search-content {
+        margin: 0;
+        padding-left: 20px;
+        width: 100%
+    }
+
+    .search-span {
+        padding-right: 0.5rem;
+        font-size: 1rem;
+    }
+
+    header i#open-search-box {
+        padding-right: 20px;
+    }
+
+    header i#close-search-box {
+        right: 25px;
+    }
 }
     
 /* This is specifically for the calc-result */
@@ -1172,11 +1248,14 @@ footer .logo > a > span {
     .right-result {
         margin-top: 30px;
     }
-
 }
 
 @media (max-width:475px) {
     
+    form.search-card {
+        width: 12rem;
+    }
+
     article {
         padding: 0 25px;
     }
@@ -1215,9 +1294,38 @@ footer .logo > a > span {
     }
 }
 
+@media (max-width: 375px) {
+    
+    form.search-card {
+        width: 10rem;
+    }
+}
+
+@media (max-width: 337px) {
+
+    form.search-card {
+        width: 8rem;
+    }
+
+    header i#open-search-box {
+        padding-right: 10px;
+    }
+
+    .search-content {
+        padding-left: 10px;
+    }
+
+    .search-span {
+        font-size: 1rem;
+    }
+
+    header i#close-search-box {
+        right: 10px;
+    }  
+}
 
 
-/* Footer responsive design */
+/* Footer Responsive Design */
 @media (max-width: 1069px) {
     
     .footer-nav-links {
@@ -1267,7 +1375,6 @@ footer .logo > a > span {
     .left-extra-links {
         margin-right: 0;
     }
-    
 }
 
 @media (max-width: 799px) {
@@ -1327,13 +1434,11 @@ footer .logo > a > span {
 
     .left-extra-links {
         margin-right: 2rem;
-        /* padding-left: 10px; */
     }
 
     .footer-copyright {
         margin: 0 auto;
         max-width: 23rem;
-        /* padding: 0 10px; */
     }
 }
 
@@ -1352,7 +1457,6 @@ footer .logo > a > span {
         max-width: 400px;
         margin-right: 0;
         padding: 0 15px 0 15px;
-       
     }
 
     .footer-nav-links ul, div.extra-links {
@@ -1374,5 +1478,4 @@ footer .logo > a > span {
         padding: 0 10px;
         text-align: center;
     }
-    
 }
