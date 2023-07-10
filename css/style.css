@@ -920,7 +920,7 @@ footer .logo > a > span {
     .block-side-bar {
         display: block;
         border: 1px solid #ccd0d5;
-        background: rgba(208, 228, 254, 0.233);
+        background: #eee;
         border-radius: 4px;
         color: #081630;
         padding: 1rem;
@@ -970,7 +970,7 @@ footer .logo > a > span {
     }
 
     #fixed-links > a {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .fixed-sidebar span {
