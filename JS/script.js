@@ -7,11 +7,7 @@ document.getElementById('open-search-box').addEventListener('click', () => {
     document.getElementById('open-search-box').style.display = 'none'
     document.getElementById('close-search-box').style.display = 'block'
 
-    // The menu icon displays none when the viewport is <= 768px
-    if (window.innerWidth <= 768) {
-        
-        menuIcon.style.display = 'none'
-    }
+    menuIcon.style.display = 'none' // Menu icon dissapears
 });
 
 const menuIcon = document.getElementById('open')
@@ -26,8 +22,7 @@ document.getElementById('close-search-box').addEventListener('click', () => {
     document.getElementById('close-search-box').style.display = 'none'
     document.getElementById('open-search-box').style.display = 'block'
 
-    // The menu icon displays block
-    menuIcon.style.display = 'block'
+    menuIcon.style.display = 'block' // Menu icon appears back
 });
 
 
@@ -38,6 +33,8 @@ const openSideBar = () => {
     navSideBar.style.display = "block"
     openIcon.style.display = 'none'
     closeIcon.style.display = 'block'
+
+    document.getElementById('open-search-box').style.display = 'none'
 
     // This adds opacity to the elements with class="content"
     for (let i = 0; i < changeColorElements.length; i++) {
@@ -61,6 +58,8 @@ const closeTheSideBar = () => {
     navSideBar.style.display = 'none'
     openIcon.style.display = 'block'
     closeIcon.style.display = 'none'
+
+    document.getElementById('open-search-box').style.display = 'block'
 
     // This removes opacity from the elements with class="content"
     for (let i = 0; i < changeColorElements.length; i++) {
@@ -87,13 +86,18 @@ const linkList = document.getElementById('side-link-list')
 const linkSocial = document.querySelector('.side-links-socials')
 
 
-// Navsidebar primary-links shows when the left arrow icon is clicked
+// Navsidebar primary-links and socials shows when the left arrow icon is clicked
 document.getElementById('close-more-links').addEventListener("click", () => {
 
     document.querySelector('.more-links').style.display = 'none'
             
     linkList.style.display = 'block'
-    linkSocial.style.display = 'block'
+
+    if (window.innerWidth > 475 && window.innerWidth < 1151) {
+        linkSocial.style.display = 'flex'
+    } else {
+        linkSocial.style.display = 'block'
+    }
 });
 
 
