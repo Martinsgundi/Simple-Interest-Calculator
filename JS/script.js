@@ -228,10 +228,10 @@ function calculateSimpleInterest(principal, rate, period, percentRatePeriod, per
     const calcSi = principal * (rate / 100) * period;
     const finalBalance = principal + calcSi;
   
-    const monthlyInterestPerYear = calcSi / (period / 12);
+    const monthlyInterestPerYear = calcSi / period / 12;
     const monthlyInterestPerMonth = calcSi / period;
   
-    const dailyInterestPerWeek = calcSi / (period / 7);
+    const dailyInterestPerWeek = calcSi / period / 7;
     const dailyInterestPerDay = calcSi / period;
 
     // Conditions given for the display of result
