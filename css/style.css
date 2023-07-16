@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+/* html {
+    scroll-behavior: smooth;
+    
+} */
+
 body {
     margin: 0;
     padding: 0;
@@ -776,7 +781,7 @@ footer .logo > a > span {
     form.search-card {
         padding-top: 0px;
         border: none;
-        width: 17rem;
+        max-width: 17rem;
         border-radius: 0px;
         box-shadow: none;
         background-color:transparent;
@@ -800,6 +805,7 @@ footer .logo > a > span {
         font-size: 17px;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode',
         'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        border: 1px solid red;
     } 
 
     i.search {
@@ -1259,7 +1265,11 @@ footer .logo > a > span {
 @media (max-width:475px) {
     
     form.search-card {
-        width: 12rem;
+        width: 13.9rem;
+    }
+
+    .search-container input::placeholder {
+        font-size: 14px;
     }
 
     article, #fixed-links {
@@ -1300,34 +1310,29 @@ footer .logo > a > span {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 400px) {
     
     form.search-card {
-        width: 10rem;
+        max-width: 12rem;
     }
 }
 
-@media (max-width: 337px) {
+@media (max-width: 370px) {
 
     form.search-card {
-        width: 8rem;
+        width: 11.8rem;
     }
 
     header i#open-search-box {
         padding-right: 10px;
     }
+}
 
-    .search-content {
-        padding-left: 10px;
+@media (max-width: 360px) {
+
+    form.search-card {
+        width: 9rem;
     }
-
-    .search-span {
-        font-size: 1rem;
-    }
-
-    header i#close-search-box {
-        right: 10px;
-    }  
 }
 
 

@@ -375,3 +375,28 @@ function calculateSimpleInterest(principal, rate, period, percentRatePeriod, per
     }  
 
 };
+
+
+
+// This handles linking of the site 
+const scrollToElement = (event) => {
+    event.preventDefault();
+    const targetId = event.target.getAttribute('href');
+    const targetElement = document.querySelector(targetId)
+
+    if (targetElement) {
+        const elementRect = targetElement.getBoundingClientRect();
+        const offsetTop = elementRect.top + document.documentElement.scrollTop || document.body.scrollTop
+        const headerHeight = 140; // Added extra pixels, to give space btw the header and the element
+        const targetPosition = offsetTop - headerHeight;
+        window.scrollTo({top: targetPosition, behavior: 'smooth'});
+    }
+};
+
+const smoothScrollLinks = document.querySelectorAll('a.smooth-scroll');
+
+// Listening to links with class 'smooth-scroll'
+smoothScrollLinks.forEach(link => {
+    link.addEventListener('click', scrollToElement);
+});
+
