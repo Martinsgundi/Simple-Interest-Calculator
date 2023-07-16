@@ -657,7 +657,7 @@ footer .logo > a > span {
 
 
 
-/* RESPONSIVE Design */
+/* Responsive Design */
 
 /* The calculator and result container displays block and are centered */
 @media (max-width: 1296px) {
@@ -805,7 +805,6 @@ footer .logo > a > span {
         font-size: 17px;
         font-family:'Trebuchet MS', 'Lucida Sans Unicode',
         'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        border: 1px solid red;
     } 
 
     i.search {
@@ -1334,6 +1333,7 @@ footer .logo > a > span {
         width: 9rem;
     }
 }
+
 
 
 /* Footer Responsive Design */
