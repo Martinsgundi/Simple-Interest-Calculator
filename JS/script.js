@@ -2,27 +2,33 @@
 // This opens the search box when the search icon is clicked
 document.getElementById('open-search-box').addEventListener('click', () => {
 
-    navBrandName.style.display = 'none'
-    searchContainer.style.display = 'block'
-    document.getElementById('open-search-box').style.display = 'none'
-    document.getElementById('close-search-box').style.display = 'block'
+    navBrandName.style.display = 'none';  
+    searchContainer.classList.add("open-search-box");
 
-    menuIcon.style.display = 'none' // Menu icon dissapears
+    document.getElementById('open-search-box').style.display = 'none';
+
+    setTimeout(() => {
+        document.getElementById('close-search-box').style.display = 'block';
+    }, 400);
+    
+    menuIcon.style.display = 'none'; // Menu icon dissapears
 });
 
-const menuIcon = document.getElementById('open')
-const navBrandName = document.querySelector('.brand-name')
-const searchContainer = document.querySelector('.search-container')
+const menuIcon = document.getElementById('open');
+const navBrandName = document.querySelector('.brand-name');
+const searchContainer = document.querySelector('.search-container');
 
 // This closes the search box when the x icon is clicked
 document.getElementById('close-search-box').addEventListener('click', () => {
 
-    navBrandName.style.display = 'block'
-    searchContainer.style.display = 'none'
-    document.getElementById('close-search-box').style.display = 'none'
-    document.getElementById('open-search-box').style.display = 'block'
+    searchContainer.classList.remove("open-search-box");
 
-    menuIcon.style.display = 'block' // Menu icon appears back
+    setTimeout(() => {
+        navBrandName.style.display = 'block';
+        document.getElementById('close-search-box').style.display = 'none';
+        document.getElementById('open-search-box').style.display = 'block';
+        menuIcon.style.display = 'block'; // Menu icon appears back
+    }, 400); // The brand name & Icons shows after the search-box leaves the viewport
 });
 
 
@@ -30,7 +36,7 @@ document.getElementById('close-search-box').addEventListener('click', () => {
 // This makes the side bar show when the open-menu icon is clicked.
 const openSideBar = () => {
 
-    navSideBar.style.display = "block"
+    navSideBar.classList.add("open-side-links")
     openIcon.style.display = 'none'
     closeIcon.style.display = 'block'
 
@@ -55,7 +61,7 @@ const closeIcon = document.getElementById ('close')
 // This makes the side bar disappear when the close-menu icon is clicked.
 const closeTheSideBar = () => {
 
-    navSideBar.style.display = 'none'
+    navSideBar.classList.remove("open-side-links")
     openIcon.style.display = 'block'
     closeIcon.style.display = 'none'
 
@@ -111,13 +117,13 @@ let observer = new IntersectionObserver (function (entries) {
         if (!entry.isIntersecting) {
 
             linkHolder.style.display = "block"
-           
+
         } 
         
         // This does the opposite
         else {
             linkHolder.style.display = "none"
-            fixedLinks.style.display = "none" // The fixed links element disappears
+            fixedLinks.style.display = "none"  // The fixed links element disappears
             arrowIcon.style.transform = "none" // The arrow icon returns to it's default position
         }
     }
@@ -142,7 +148,7 @@ window.onload = () => {
             
             fixedLinks.style.display = "block"
             arrowIcon.style.transform = "rotate(180deg)"
-            
+
         } 
         
         else {
@@ -399,4 +405,3 @@ const smoothScrollLinks = document.querySelectorAll('a.smooth-scroll');
 smoothScrollLinks.forEach(link => {
     link.addEventListener('click', scrollToElement);
 });
-
